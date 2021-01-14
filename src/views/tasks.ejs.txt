@@ -1,0 +1,24 @@
+ <% f.forEach(function(product) { %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <%= product.title %>
+        </div>
+        <img class="card-img-top" src="<%= product.image %>">
+        <div class="card card-body">
+          <%= product.description %>
+        </div>
+        <div class="card-footer">
+          <a href="/delete/<%= product.id %>" class="btn btn-danger btn-block">
+            Delete
+          </a>
+        </div>
+      </div>
+    </div>
+    <%})%>
+    <%} else {%>
+    <div class="card card-body text-center">
+      <p>No products yet. <a href="/new-entry">Add A New One</a></p>
+    </div>
+    <%}%>
+    </div>
